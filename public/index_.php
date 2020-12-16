@@ -1,5 +1,5 @@
 <?php
-define('WEB_ROOT', 'public/');
+define('WEB_ROOT', '/');
 
 // 待確認： PHP 的 include 的路徑，不是像網頁的路徑， WEB_ROOT 的寫法沒用
 // 用相對路徑寫會不會有安全疑慮？ 
