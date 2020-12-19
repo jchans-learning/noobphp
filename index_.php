@@ -11,6 +11,6 @@ define('WEB_ROOT', '/noobphp/');
 
 <?php include __DIR__. '/parts/html-head.php'; ?>
 <?php include __DIR__. '/parts/navbar.php'; ?>
-<?php include __DIR__. '/parts/include-test.php'; ?>
+<?php include __DIR__. '/parts/index-content.php'; ?>
 <?php include __DIR__. '/parts/scripts.php'; ?>
 <?php include __DIR__. '/parts/html-foot.php'; ?>
