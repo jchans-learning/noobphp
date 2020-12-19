@@ -20,7 +20,7 @@
 			<ul>
 				<li>架構</li>
 					<ul>
-						<li>通訊錄列表</li>
+						<li>拼圖列表</li>
 							<ul>
 								<li>讀取通訊錄資料(R)</li>
 									<ul>
@@ -65,12 +65,14 @@
 	<div class="row p-3 mb-2">
 		<div>
 			<h2>工作筆記</h2>
+			<h3>2020/12/20</h3>
 			<ul>
 				<li>
 					<a href="https://github.com/jchans/noobphp/commit/af51b7607f018410fcdd022fc8f2e1ba40b09cd1#diff-b07e48f0f2dc6c53e55b040c07454d668afb2670ebcc26da0a7e44397b630a93">
 						製作 navbar ，加上 div container 對齊。
 					</a>
 				</li>
+				<li>把這個複習順便跟小專一起做？還是說先照老師的範例做一次，再做一次小專的版本？我有那麼多時間？</li>
 			</ul>			
 		</div>
 	</div>
