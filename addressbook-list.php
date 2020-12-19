@@ -22,9 +22,30 @@
 	</div>	
 
 	<table class="table table-striped table-bordered">
-		<tr>
-			<th><i class="fas fa-minus-circle"></i></th>
-		</tr>
+		<thead>
+			<tr>
+				<th><i class="fas fa-minus-circle"></i></th>
+				<th scope="col">sid</th>
+				<th scope="col">name</th>
+				<th scope="col">email</th>
+				<th scope="col">mobile</th>
+				<th scope="col">birthday</th>
+				<th scope="col">address</th>
+				<th scope="col"><i class="fas fa-edit"></i></th>
+			</tr>			
+		</thead>
+		<tbody>
+			<tr>
+				<th><i class="fas fa-minus-circle"></i></th>
+				<th scope="col">sid資料</th>
+				<th scope="col">name資料</th>
+				<th scope="col">email資料</th>
+				<th scope="col">mobile資料</th>
+				<th scope="col">birthday資料</th>
+				<th scope="col">address資料</th>
+				<th scope="col"><i class="fas fa-edit"></i></th>
+			</tr>
+		</tbody>
 	</table>
 </div>
 
