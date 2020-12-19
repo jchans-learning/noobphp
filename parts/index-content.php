@@ -26,7 +26,7 @@
 									<ul>
 										<li>通訊錄列表</li>
 											<ul>
-												<li>格式（ done ）</li>
+												<li>新增頁面格式（ done, Task 01 ）</li>
 											</ul>
 										<li>單頁顯示筆數設定</li>
 										<li>頁數條</li>
@@ -46,6 +46,9 @@
 						<li>新增通訊錄( admin 登入後可連結，未登入連到登入頁面)</li>
 							<ul>
 								<li>新增單筆資料(C ， admin 登入後)</li>
+									<ul>
+										<li>新增頁面格式（ Task 02 ）</li>
+									</ul>
 							</ul>
 							
 						<li>登入</li>
