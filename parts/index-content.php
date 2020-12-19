@@ -65,15 +65,24 @@
 	<div class="row p-3 mb-2">
 		<div>
 			<h2>工作筆記</h2>
+			<h3>2020/12/19 之前</h3>
+				<ul>
+					<li>研究怎麼把專案 deploy 到 Heroku 。</li>
+					<li>研究怎麼在 Heroku 上用 SQL 資料庫，後研究 PostgresSQL 在 Heroku 上的用法。</li>
+					<li>安裝 bootstrap 4 與 jQuery 到專案中。</li>
+					<li>push 專案到 heroku 。
+					</li>
+				</ul>
 			<h3>2020/12/20</h3>
-			<ul>
-				<li>
-					<a href="https://github.com/jchans/noobphp/commit/af51b7607f018410fcdd022fc8f2e1ba40b09cd1#diff-b07e48f0f2dc6c53e55b040c07454d668afb2670ebcc26da0a7e44397b630a93">
+				<ul>
+					<li>
+						<a href="https://github.com/jchans/noobphp/commit/af51b7607f018410fcdd022fc8f2e1ba40b09cd1#diff-b07e48f0f2dc6c53e55b040c07454d668afb2670ebcc26da0a7e44397b630a93">
 						製作 navbar ，加上 div container 對齊。
-					</a>
-				</li>
-				<li>把這個複習順便跟小專一起做？還是說先照老師的範例做一次，再做一次小專的版本？我有那麼多時間？</li>
-			</ul>			
+						</a>
+					</li>
+					<li>把這個複習順便跟小專一起做？還是說先照老師的範例做一次，再做一次小專的版本？我有那麼多時間？</li>
+					<li>安裝 Font Awesome 5.151-web 。</li>
+				</ul>			
 		</div>
 	</div>
 

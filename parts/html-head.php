@@ -16,5 +16,6 @@ define('WEB_ROOT', '/noobphp/');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
     <link rel="stylesheet" href="<?= WEB_ROOT ?>bootstrap-4.5.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="<?= WEB_ROOT ?>fontawesome-free-5.15.1-web/css/all.css">
 </head>
 <body>
