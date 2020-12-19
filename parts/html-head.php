@@ -19,3 +19,10 @@ define('WEB_ROOT', '/noobphp/');
     <link rel="stylesheet" type="text/css" href="<?= WEB_ROOT ?>fontawesome-free-5.15.1-web/css/all.css">
 </head>
 <body>
+
+<?php 
+// 筆記
+//
+// Font Awesome
+// https://fontawesome.com/
+ ?>

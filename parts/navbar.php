@@ -20,3 +20,10 @@
 	  </div>
 	</div>
 </nav>
+
+<?php 
+// 筆記
+//
+// Bootstrap 4, navbar
+// https://getbootstrap.com/docs/4.0/components/navbar/
+ ?>
