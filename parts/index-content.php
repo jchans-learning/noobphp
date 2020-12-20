@@ -17,16 +17,19 @@
 		<div class="">
 			<h2>複習規劃</h2>
 			<p>PHP and MySQL 上課的內容主要是做出一個通訊錄， admin 使用者登入之後可以新增，讀取，修改，刪除通訊錄的資料。按照老師上課教的檔案，重做一次。</p>
+			
+			<!-- 複習規劃 Bulleted List Start -->
 			<ul>
 				<li>架構</li>
 					<ul>
-						<li>拼圖列表</li>
+						<li>通訊錄</li>
 							<ul>
 								<li>讀取通訊錄資料(R)</li>
 									<ul>
 										<li>通訊錄列表</li>
 											<ul>
 												<li>新增頁面格式（ Task 01 ，done ）</li>
+												<li>新增通訊錄列表 API </li>
 											</ul>
 										<li>單頁顯示筆數設定</li>
 										<li>頁數條</li>
@@ -63,8 +66,19 @@
 										<li>更改密碼（可留空）</li>
 									</ul>
 							</ul>
+						<li>資料庫連線</li>
+							<ul>
+								<li>建立通訊錄用的資料庫（ Task 03 ）</li>
+									<ul>
+										<li>建立通訊錄資料表（ Task 04 ）
+										<li>建兩筆資料（ Task 05 ）</li>
+										<li>導入測試用的資料</li>
+									</ul>
+							</ul>
 					</ul>
 			</ul>
+			<!-- 複習規劃 Bulleted List Start End　-->
+
 		</div>
 	</div>
 
@@ -91,6 +105,15 @@
 					<li>建立通訊錄列表格式。</li>
 					<li>----半夜工作分隔線----</li>
 				</ul>			
+		</div>
+	</div>
+
+	<div class="row p-3 mb-2">
+		<div>
+			<h2>參考資料</h2>
+			<ul>
+				<li>API ： https://developer.mozilla.org/zh-TW/docs/Glossary/API</li>
+			</ul>
 		</div>
 	</div>
 
