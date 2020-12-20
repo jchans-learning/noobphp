@@ -20,7 +20,7 @@
 			
 			<!-- 複習規劃 Bulleted List Start -->
 			<h3>架構</h3>
-			
+
 			<ul>
 				<li>通訊錄</li>
 					<ul>
@@ -29,7 +29,7 @@
 								<li>通訊錄列表</li>
 									<ul>
 										<li>新增頁面格式（ Task 01 ，done ）</li>
-										<li>新增通訊錄列表 API </li>
+										<li>新增通訊錄列表 API （ Task 06 ，done ）</li>
 									</ul>
 								<li>單頁顯示筆數設定</li>
 								<li>頁數條</li>
@@ -74,6 +74,7 @@
 								<li>建兩筆資料（ Task 05 ）</li>
 								<li>導入測試用的資料</li>
 							</ul>
+						<li>新增資料酷連線 API （ Task 07 ）</li>
 					</ul>
 			</ul>
 			<!-- 複習規劃 Bulleted List Start End　-->

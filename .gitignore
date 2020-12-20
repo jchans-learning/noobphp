@@ -1,2 +1,7 @@
+# Ignore composer
 vendor/
+composer.lock
 .env
+
+# Ignore db key
+db_key_noobphp.php
