@@ -1,6 +1,24 @@
 <?php // address book list ?>
 
+<?php 
+// PHP Code Start
+require __DIR__. '/db_connect.php';
 
+$pageName = 'addressbook-list';
+
+$p_sql = sprintf("SELECT * FROM address_book");
+
+echo '<!-- ';
+echo $p_sql;
+echo ' -->';
+
+$statement = $pdo->query($p_sql);
+$row = $statement->fetch();
+
+print_r($row);
+
+// PHP Code End
+?>
 
 
 <?php include __DIR__. '/parts/html-head.php'; ?>
