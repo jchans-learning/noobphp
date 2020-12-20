@@ -1,23 +1,18 @@
 <?php // address book list ?>
 
 <?php 
-// PHP Code Start
+// PHP Code Block Start
 require __DIR__. '/db_connect.php';
 
 $pageName = 'addressbook-list';
 
-$p_sql = sprintf("SELECT * FROM address_book");
-
-echo '<!-- ';
-echo $p_sql;
-echo ' -->';
+$p_sql = sprintf("SELECT * FROM address_book ORDER BY sid DESC");
 
 $statement = $pdo->query($p_sql);
-$row = $statement->fetch();
+// $row = $statement->fetch();
+// print_r($row);
 
-print_r($row);
-
-// PHP Code End
+// PHP Code Block End
 ?>
 
 
@@ -53,16 +48,18 @@ print_r($row);
 			</tr>			
 		</thead>
 		<tbody>
+			<?php while ($r = $statement->fetch()): ?>
 			<tr>
 				<th><i class="fas fa-minus-circle"></i></th>
-				<th scope="col">sid資料</th>
-				<th scope="col">name資料</th>
-				<th scope="col">email資料</th>
-				<th scope="col">mobile資料</th>
-				<th scope="col">birthday資料</th>
-				<th scope="col">address資料</th>
+				<th scope="col"><?= $r['sid'] ?></th>
+				<th scope="col"><?= $r['name'] ?></th>
+				<th scope="col"><?= $r['email'] ?></th>
+				<th scope="col"><?= $r['mobile'] ?></th>
+				<th scope="col"><?= $r['birthday'] ?></th>
+				<th scope="col"><?= $r['address'] ?></th>
 				<th scope="col"><i class="fas fa-edit"></i></th>
 			</tr>
+			<?php endwhile; ?>
 		</tbody>
 	</table>
 </div>

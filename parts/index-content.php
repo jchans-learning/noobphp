@@ -30,6 +30,7 @@
 									<ul>
 										<li>新增頁面格式（ Task 01 ，done ）</li>
 										<li>新增通訊錄列表 API （ Task 06 ，done ）</li>
+										<li>使通訊錄列表頁面從資料庫獲得 1 筆資料（ Task 08 ，doing ）</li>
 									</ul>
 								<li>單頁顯示筆數設定</li>
 								<li>頁數條</li>
@@ -68,13 +69,13 @@
 					</ul>
 				<li>資料庫連線</li>
 					<ul>
-						<li>建立通訊錄用的資料庫（ Task 03 ）</li>
+						<li>建立通訊錄用的資料庫（ Task 03 ， done ）</li>
 							<ul>
-								<li>建立通訊錄資料表（ Task 04 ）
-								<li>建兩筆資料（ Task 05 ）</li>
+								<li>建立通訊錄資料表（ Task 04 ， done ）
+								<li>建兩筆資料（ Task 05 ， done ）</li>
 								<li>導入測試用的資料</li>
 							</ul>
-						<li>新增資料酷連線 API （ Task 07 ）</li>
+						<li>新增資料庫連線 API （ Task 07 ， done ）</li>
 					</ul>
 			</ul>
 			<!-- 複習規劃 Bulleted List Start End　-->
