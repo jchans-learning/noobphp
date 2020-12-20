@@ -30,7 +30,8 @@
 									<ul>
 										<li>新增頁面格式（ Task 01 ，done ）</li>
 										<li>新增通訊錄列表 API （ Task 06 ，done ）</li>
-										<li>使通訊錄列表頁面從資料庫獲得 1 筆資料（ Task 08 ，doing ）</li>
+										<li>使通訊錄列表頁面從資料庫獲得 1 筆資料（ Task 08 ，done ）</li>
+										<li>使通訊錄列表頁面從資料庫獲得全部資料（ Task 09 ，done ）</li>
 									</ul>
 								<li>單頁顯示筆數設定</li>
 								<li>頁數條</li>
