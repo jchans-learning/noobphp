@@ -13,4 +13,6 @@ $output = [
 	'rows' => $rows,
 ];
 
+// print_r($output);
+
 echo json_encode($output, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
