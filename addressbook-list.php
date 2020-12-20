@@ -9,6 +9,9 @@ $pageName = 'addressbook-list';
 $p_sql = sprintf("SELECT * FROM address_book ORDER BY sid DESC");
 
 $statement = $pdo->query($p_sql);
+
+// Comment: ver.1 using fetch()
+//
 // $row = $statement->fetch();
 // print_r($row);
 
