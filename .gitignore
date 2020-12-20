@@ -1,6 +1,5 @@
 # Ignore composer
 vendor/
-composer.lock
 .env
 
 # Ignore db key
