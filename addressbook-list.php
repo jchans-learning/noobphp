@@ -22,6 +22,11 @@ $statement = $pdo->query($p_sql);
 <?php include __DIR__. '/parts/html-head.php'; ?>
 <?php include __DIR__. '/parts/navbar.php'; ?>
 
+<style type="text/css">
+	.remove-icon a i {
+		color: red;
+	}
+</style>
 
 <div class="container">
 
@@ -53,7 +58,11 @@ $statement = $pdo->query($p_sql);
 		<tbody>
 			<?php while ($r = $statement->fetch()): ?>
 			<tr>
-				<th><i class="fas fa-minus-circle"></i></th>
+				<td class="remove-icon">
+					<a href="javascript: del_it(<?= $r['sid'] ?>)">
+						<i class="fas fa-minus-circle"></i>
+					</a>
+				</td>
 				<th scope="col"><?= $r['sid'] ?></th>
 				<th scope="col"><?= $r['name'] ?></th>
 				<th scope="col"><?= $r['email'] ?></th>
@@ -67,9 +76,14 @@ $statement = $pdo->query($p_sql);
 	</table>
 </div>
 
-
-
-
-
 <?php include __DIR__. '/parts/scripts.php'; ?>
+
+<script type="text/javascript">
+	function del_it(sid) {
+		if (confirm('是否要刪除資料${sid}')) {
+			location.href = 'addressbook-delete.php?sid=' + sid;
+		}
+	}
+</script>
+
 <?php include __DIR__. '/parts/html-foot.php'; ?>
