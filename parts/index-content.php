@@ -31,7 +31,7 @@
 										<li>新增頁面格式（ Task 01 ，done ）</li>
 										<li>新增通訊錄列表 API （ Task 06 ，done ）</li>
 										<li>使通訊錄列表頁面從資料庫獲得 1 筆資料（ Task 08 ，done ）</li>
-										<li>使通訊錄列表頁面從資料庫獲得全部資料（ Task 09 ，done ）</li>
+										<li>使通訊錄列表頁面從資料庫獲得全部資料，目前是 2 筆（ Task 09 ，done ）</li>
 									</ul>
 								<li>單頁顯示筆數設定</li>
 								<li>頁數條</li>
@@ -74,7 +74,7 @@
 							<ul>
 								<li>建立通訊錄資料表（ Task 04 ， done ）
 								<li>建兩筆資料（ Task 05 ， done ）</li>
-								<li>導入測試用的資料</li>
+								<li>導入測試用的資料（ Task 10 ，done ）</li>
 							</ul>
 						<li>新增資料庫連線 API （ Task 07 ， done ）</li>
 					</ul>
