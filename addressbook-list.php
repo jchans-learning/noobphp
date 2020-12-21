@@ -84,7 +84,7 @@ $statement = $pdo->query($p_sql);
 
 <script type="text/javascript">
 	function del_it(sid) {
-		if (confirm('是否要刪除資料${sid}')) {
+		if (confirm(`是否要刪除資料${sid}`)) {
 			location.href = 'addressbook-delete.php?sid=' + sid;
 		}
 	}
