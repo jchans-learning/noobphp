@@ -19,7 +19,7 @@
 						</div>
 						<div class="form-group">
 							<label for="email">** email</label>
-							<input type="text" class="form-control" id="email" name="email">
+							<input type="email" class="form-control" id="email" name="email">
 						</div>
 						<div class="form-group">
 							<label for="mobile">mobile</label>
@@ -43,7 +43,7 @@
 
 <?php include __DIR__. '/parts/scripts.php'; ?>
 
-<script type="text/javascript">
+<script>
 
 	function checkForm() {
 		const fd = new FormData(document.form1);
@@ -52,11 +52,11 @@
 			method: 'POST',
 			body: fd
 			})
-			.then(r => r.json())
-			.then(obj => {
+			.then(r=>r.json())
+            .then(obj=>{
 				console.log(obj);
-			})
-	}
+			});
+	 }
 
 	
 </script>
@@ -66,6 +66,7 @@
 <?php 
 // 筆記
 //
-// Bootstrap 4, card
-// https://getbootstrap.com/docs/4.0/components/card/
+// Page Form Ref:
+// 1. Bootstrap 4, card: https://getbootstrap.com/docs/4.0/components/card/
+//
  ?>
