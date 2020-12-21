@@ -75,6 +75,8 @@ if(empty($row)){
             .then(obj => {
 				console.log(obj);
 			})
+
+			window.location.href = 'addressbook-list.php';
         }
 
 	
