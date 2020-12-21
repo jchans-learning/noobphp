@@ -23,7 +23,7 @@
 						</div>
 						<div class="form-group">
 							<label for="mobile">mobile</label>
-							<input type="text" class="form-control" id="mobile" name="mobile" pattern="">
+							<input type="text" class="form-control" id="mobile" name="mobile">
 						</div>
 						<div class="form-group">
 							<label for="birthday">birthday</label>
@@ -44,14 +44,21 @@
 <?php include __DIR__. '/parts/scripts.php'; ?>
 
 <script type="text/javascript">
-	const fd = new FormData(document.form1);
 
-	fetch('addressbook-insert-api.php', {
-		method: 'POST',
-		body: fd
-		})
-		.then(r => r.json())
-		.then(obj)
+	function chechForm() {
+		const fd = new FormData(document.form1);
+
+		fetch('addressbook-insert-api.php', {
+			method: 'POST',
+			body: fd
+			})
+			.then(r => r.json())
+			.then(obj => {
+				console.log(obj);
+			})
+	}
+
+	
 </script>
 
 <?php include __DIR__. '/parts/html-foot.php'; ?>
