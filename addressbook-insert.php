@@ -44,19 +44,20 @@
 <?php include __DIR__. '/parts/scripts.php'; ?>
 
 <script>
+	
 
 	function checkForm() {
 		const fd = new FormData(document.form1);
-
+		
 		fetch('addressbook-insert-api.php', {
 			method: 'POST',
 			body: fd
 			})
-			.then(r=>r.json())
-            .then(obj=>{
+			.then(r => r.json())
+            .then(obj => {
 				console.log(obj);
-			});
-	 }
+			})
+        }
 
 	
 </script>

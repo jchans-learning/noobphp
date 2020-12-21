@@ -67,11 +67,12 @@
 										<li>
 											頁面格式（ Task 02 ，即使還沒做出 admin 登入權限，還是先做出有權限新增時的頁面，一些邏輯功能都先略，只先做出表單的前端格式。 done ）
 										</li>
-										<li>fetch() 與 POST （ Task 12-1 ，working ）</li>
+										<li>fetch() 與 POST （ Task 12-1 ， done ）</li>
 									</ul>
-								<li>新增通訊錄單筆資料 API（ Task 12-2 ，working ）</li>
+								<li>新增通訊錄單筆資料 API</li>
 									<ul>
-										<li>讀寫資料庫功能</li>
+										<li>建立 API 檔案（ Task 12-2 ， done ）</li>
+										<li>寫入資料庫功能（ Task 12-3 ， done ，注意！ 12-1 ~ 12-3 要一起做完才會有功能！）</li>
 										<li>格式檢查</li>
 									</ul>
 								<li>設定 admin 登入後才能新增資料</li>
