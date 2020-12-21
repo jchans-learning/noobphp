@@ -13,6 +13,9 @@
 	      <li class="nav-item">
 	        <a class="nav-link" href="addressbook-insert.php">新增通訊錄</a>
 	      </li>
+		  <li class="nav-item">
+	        <a class="nav-link" href="addressbook-insert.php">小專試作</a>
+	      </li>
 	    </ul>
 	    <ul class="navbar-nav">
 	    	<li class="nav-item">登入</li>
