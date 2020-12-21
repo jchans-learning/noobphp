@@ -63,7 +63,7 @@
 						<li>新增單筆資料(C)</li>
 							<ul>
 								<li>新增頁面格式（ Task 02 ，即使還沒做出 admin 登入權限，還是先做出有權限新增時的頁面，一些邏輯功能都先略，只先做出表單的前端格式。 done ）</li>
-								<li>新增通訊錄單筆資料功能（ Task 12 ，working ）</li>
+								<li>新增通訊錄單筆資料 API（ Task 12 ，working ）</li>
 								<li>設定 admin 登入後才能新增資料</li>
 							</ul>
 					</ul>
