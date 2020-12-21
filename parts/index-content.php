@@ -62,8 +62,14 @@
 					<ul>
 						<li>新增單筆資料(C)</li>
 							<ul>
-								<li>新增頁面格式（ Task 02 ，即使還沒做出 admin 登入權限，還是先做出有權限新增時的頁面，一些邏輯功能都先略，只先做出表單的前端格式。 done ）</li>
-								<li>新增通訊錄單筆資料 API（ Task 12 ，working ）</li>
+								<li>新增通訊錄單筆資料頁面</li>
+									<ul>
+										<li>
+											頁面格式（ Task 02 ，即使還沒做出 admin 登入權限，還是先做出有權限新增時的頁面，一些邏輯功能都先略，只先做出表單的前端格式。 done ）
+										</li>
+										<li>fetch() 與 POST （ Task 12-1 ，working ）</li>
+									</ul>
+								<li>新增通訊錄單筆資料 API（ Task 12-2 ，working ）</li>
 									<ul>
 										<li>讀寫資料庫功能</li>
 										<li>格式檢查</li>
