@@ -67,7 +67,7 @@ if(empty($row)){
 	function checkForm() {
 		const fd = new FormData(document.form1);
 		
-		fetch('addressbook-insert-api.php', {
+		fetch('addressbook-edit-api.php', {
 			method: 'POST',
 			body: fd
 			})
