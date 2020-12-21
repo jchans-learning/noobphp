@@ -1,14 +1,15 @@
 <?php // address book edit ?>
 
 <?php
-require __DIR__ . 'db_conntect.php';
+require __DIR__ . '/db_connect.php';
 
 if(!isset($_GET['sid'])){
 	header('Location: addressbook-list.php');
 	exit;
 }
+$sid = intval($_GET['sid']);
 
-$sid = $pdo
+$row = $pdo
 	->query("SELECT * FROM address_book WHERE sid=$sid")
 	->fetch();
 
