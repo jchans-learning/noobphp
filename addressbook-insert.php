@@ -1,6 +1,7 @@
 <?php // address book insert ?>
 
 
+
 <?php include __DIR__. '/parts/html-head.php'; ?>
 <?php include __DIR__. '/parts/navbar.php'; ?>
 
@@ -12,7 +13,7 @@
 					<h5 class="card-title">新增資料</h5>
 
 					<form name="form1">
-						<div class="form-group" onsubmit="">
+						<div class="form-group" onsubmit="checkForm();">
 							<label for="name">** name</label>
 							<input type="text" class="form-control" id="name" name="name">
 						</div>
@@ -41,6 +42,18 @@
 </div>
 
 <?php include __DIR__. '/parts/scripts.php'; ?>
+
+<script type="text/javascript">
+	const fd = new FormData(document.form1);
+
+	fetch('addressbook-insert-api.php', {
+		method: 'POST',
+		body: fd
+		})
+		.then(r => r.json())
+		.then(obj)
+</script>
+
 <?php include __DIR__. '/parts/html-foot.php'; ?>
 
 <?php 
