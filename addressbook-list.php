@@ -63,13 +63,17 @@ $statement = $pdo->query($p_sql);
 						<i class="fas fa-minus-circle"></i>
 					</a>
 				</td>
-				<th scope="col"><?= $r['sid'] ?></th>
-				<th scope="col"><?= $r['name'] ?></th>
-				<th scope="col"><?= $r['email'] ?></th>
-				<th scope="col"><?= $r['mobile'] ?></th>
-				<th scope="col"><?= $r['birthday'] ?></th>
-				<th scope="col"><?= $r['address'] ?></th>
-				<th scope="col"><i class="fas fa-edit"></i></th>
+				<td scope="col"><?= $r['sid'] ?></td>
+				<td scope="col"><?= $r['name'] ?></td>
+				<td scope="col"><?= $r['email'] ?></td>
+				<td scope="col"><?= $r['mobile'] ?></td>
+				<td scope="col"><?= $r['birthday'] ?></td>
+				<td scope="col"><?= $r['address'] ?></td>
+				<td scope="col">
+					<a href="addressbook-edit.php?sid=<?= $r['sid'] ?>">
+						<i class="fas fa-edit"></i>
+					</a>
+				</td>
 			</tr>
 			<?php endwhile; ?>
 		</tbody>
