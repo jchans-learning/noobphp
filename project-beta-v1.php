@@ -4,6 +4,7 @@
 
 <?php include __DIR__. '/parts/html-head.php'; ?>
 <?php include __DIR__. '/parts/navbar.php'; ?>
+<?php include __DIR__. '/parts/scripts.php'; ?>
 
 <style>
 .book {
@@ -14,6 +15,43 @@
 </style>
 
 <div class="container mt-3">
+
+    <!-- Drag and drop example -->
+    <div class="row book">
+        <div class="col-2">
+            <div class="drop">
+                <button class="btn btn-info dragdrop">等</button>
+                <button class="btn btn-info dragdrop">價</button>
+                <button class="btn btn-info dragdrop">交</button>
+                <button class="btn btn-info dragdrop">換</button>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="drop">
+                Drop here
+            </div>
+            <div class="drop">
+                Drop here
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="drop">
+                Drop here
+            </div>
+            <div class="drop">
+                Drop here
+            </div>
+        </div>
+    </div>
+
+    <!-- Puzzle example -->
+    <div class="row">
+        <div class="col" style="height: 600px; border: solid 1px; background-color: #EEE;">
+            <div class="mt-3 d-flex justify-content-center">
+                <img src="images/fma01.jpg" alt="">
+            </div>            
+        </div>
+    </div>
 
     <div class="row">
         <div class="col-12" style="height: 600px; border: solid 1px; background-color: #EEE;">
@@ -35,6 +73,19 @@
                             </ul>
                     </ul>
                 <li>玩家點選拼圖庫按鈕</li>
+                    <ul>
+                        <li>點選「我的拼圖」，出現拼圖清單(R)，可以修改(U)，或者刪除(D)，擁有的拼圖</li>
+                        <li>點選「建立拼圖」，出現建立新拼圖頁面(C)</li>
+                            <ul>
+                                <li>建立拼圖要可以輸入文字（暫定 140 字以內）</li>
+                                <li>拼圖提示，要可以上傳一張圖，或者從個人書庫中選擇一張圖</li>
+                                <li>設定答案：例如四個段落的順訊 ABCD </li>
+                                <li>自訂或者亂數產生折扣碼</li>
+                            </ul>
+                        <li>點選「我的折扣」，出現折扣碼清單(R)</li>
+                        <li>點選「藏書筆記」，出現筆記清單(R)，從筆記清單建立拼圖(C)</li>
+                        
+                    </ul>
             </ul>
         </div>
     </div>
@@ -80,12 +131,12 @@
     </div>
     <div class="row">
         <div class="col d-flex flex-row-reverse fixed-bottom">
-            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button type="button" class="btn btn-info dropdown-toggle" id="puzzel-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 拼圖庫
             </button>
             <div class="dropdown-menu">
-                <a href="#" class="dropdown-item">我的拼圖(R, U, D)</a>
                 <a href="#" class="dropdown-item">建立拼圖(C)</a>
+                <a href="#" class="dropdown-item">我的拼圖(R, U, D)</a>
                 <a href="#" class="dropdown-item">我的折扣(R)</a>
                 <a href="#" class="dropdown-item">藏書筆記(R)</a>
             </div>
@@ -96,7 +147,44 @@
     </div>
 </div>
 
+<!-- autobg color -->
+<script>
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * Math.floor(max - 50) + 100);
+        }
+
+        function getRBGA() {
+            return `linear-gradient(135deg, rgba(${getRandomInt(256)},${getRandomInt(256)},${getRandomInt(256)},.5), rgba(${getRandomInt(256)},${getRandomInt(256)},${getRandomInt(256)},.8)`
+        }
+
+        const elements = document.querySelectorAll('.autobg');
+
+        Array.from(elements).forEach((element, index) => {
+            element.style.backgroundImage = getRBGA();
+        });
+
+    // $('.autobg').each(function (index, currentElement) {
+    //     currentElement.style.backgroundImage = getRBGA();
+    // });
+</script>
 
 
-<?php include __DIR__. '/parts/scripts.php'; ?>
+<!-- Copied from demo of https://github.com/gardiner/draganddrop -->
+    <link href='src/demo.css' rel='stylesheet' type='text/css'>
+    <link href='src/draganddrop.css' rel='stylesheet' type='text/css'>
+    <script src='src/draganddrop.js' type='text/javascript'></script>
+    <script type='text/javascript'>
+        $(function () {
+            $('.dragdrop').draggable({
+                revert: true,
+                placeholder: true,
+                droptarget: '.drop',
+                drop: function (evt, droptarget) {
+                    // $(this).appendTo(droptarget).draggable('destroy');
+                    $(this).appendTo(droptarget);
+                }
+            });
+        });
+    </script>
+
 <?php include __DIR__. '/parts/html-foot.php'; ?>
