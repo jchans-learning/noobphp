@@ -15,41 +15,38 @@
 </style>
 
 <div class="container mt-3">
-
-    <!-- Drag and drop example -->
-    <div class="row book">
-        <div class="col-2">
-            <div class="drop">
-                <button class="btn btn-info dragdrop">等</button>
-                <button class="btn btn-info dragdrop">價</button>
-                <button class="btn btn-info dragdrop">交</button>
-                <button class="btn btn-info dragdrop">換</button>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="drop">
-                Drop here
-            </div>
-            <div class="drop">
-                Drop here
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="drop">
-                Drop here
-            </div>
-            <div class="drop">
-                Drop here
-            </div>
-        </div>
-    </div>
-
     <!-- Puzzle example -->
     <div class="row">
-        <div class="col" style="height: 600px; border: solid 1px; background-color: #EEE;">
+        <div class="col" style="height: 450px; border: solid 1px; background-color: #EEE;">
             <div class="mt-3 d-flex justify-content-center">
                 <img src="images/fma01.jpg" alt="">
             </div>            
+        </div>
+        <div class="col d-flex" style="height: 450px; border: solid 1px; background-color: #EEE;">
+            <div class="col-3">
+                <div class="drop">
+                    碎片1
+                    <button class="btn btn-info dragdrop">等</button>
+                </div>
+                <div class="drop">
+                    碎片2
+                    <button class="btn btn-info dragdrop">交</button>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="drop">
+                    碎片3
+                    <button class="btn btn-info dragdrop">價</button>
+                </div>
+                <div class="drop">
+                    碎片4
+                    <button class="btn btn-info dragdrop">換</button>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="drop" style="height: 200px;">
+                </div>
+            </div>
         </div>
     </div>
 
@@ -183,6 +180,11 @@
                     // $(this).appendTo(droptarget).draggable('destroy');
                     $(this).appendTo(droptarget);
                 }
+            });
+            //off switch
+            $('.off').on('click', function () {
+              $('.sortable').each(function () { $(this).sortable('destroy');    });
+              $('.draggable').each(function () { $(this).draggable('destroy')   ; });
             });
         });
     </script>
