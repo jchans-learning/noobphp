@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mt-3">
 
 	<div class="r" p-3 mb-2>
 		<h1>工作記事</h1>

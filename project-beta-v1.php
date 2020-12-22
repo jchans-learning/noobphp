@@ -7,13 +7,13 @@
 
 <style>
 .book {
-    height: 100px;
+    height: 300px;
     background-color: #EEE;
     border: solid 1px;
 }
 </style>
 
-<div class="container">
+<div class="container mt-3">
 
     <div class="row">
         <div class="col-12" style="height: 600px; border: solid 1px; background-color: #EEE;">
@@ -62,8 +62,20 @@
     </div>
     <div class="row">
         <div class="col d-flex flex-row-reverse fixed-bottom">
-            <div class="btn btn-info align-self-end">叫出拼圖清單</div>
+            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                叫出拼圖選單
+            </button>
+            <div class="dropdown-menu">
+                <a href="#" class="dropdown-item">Test1</a>
+                <a href="#" class="dropdown-item">Test1</a>
+                <a href="#" class="dropdown-item">Test1</a>
+                <a href="#" class="dropdown-item">Test1</a>
+                <a href="#" class="dropdown-item">Test1</a>
+            </div>
         </div>
+        </div>
+
+        
     </div>
 </div>
 

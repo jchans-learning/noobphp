@@ -22,7 +22,7 @@ if(empty($row)){
 <?php include __DIR__. '/parts/html-head.php'; ?>
 <?php include __DIR__. '/parts/navbar.php'; ?>
 
-<div class="container">
+<div class="container mt-3">
 	<div class="row d-flex justify-content-center">
 		<div class="col-lg-6">
 			<div class="card">
