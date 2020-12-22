@@ -1,20 +1,13 @@
-<?php
-// address book list
-$pageName = 'addressbook-list';
-?>
+<?php // address book list ?>
 
 <?php 
 // PHP Code Block Start
 require __DIR__. '/db_connect.php';
 
-
-if(!isset($_SESSION['admin'])){
-	include __DIR__ . '/addressbook-list-noadmin.php';
-	exit;
-}
-
+$pageName = 'addressbook-list';
 
 $p_sql = sprintf("SELECT * FROM address_book ORDER BY sid DESC");
+
 $statement = $pdo->query($p_sql);
 
 // Comment: ver.1 using fetch()
@@ -52,35 +45,23 @@ $statement = $pdo->query($p_sql);
 	<table class="table table-striped table-bordered">
 		<thead>
 			<tr>
-				<th><i class="fas fa-minus-circle"></i></th>
 				<th scope="col">sid</th>
 				<th scope="col">name</th>
 				<th scope="col">email</th>
 				<th scope="col">mobile</th>
 				<th scope="col">birthday</th>
 				<th scope="col">address</th>
-				<th scope="col"><i class="fas fa-edit"></i></th>
 			</tr>			
 		</thead>
 		<tbody>
 			<?php while ($r = $statement->fetch()): ?>
 			<tr>
-				<td class="remove-icon">
-					<a href="javascript: del_it(<?= $r['sid'] ?>)">
-						<i class="fas fa-minus-circle"></i>
-					</a>
-				</td>
 				<td scope="col"><?= $r['sid'] ?></td>
 				<td scope="col"><?= $r['name'] ?></td>
 				<td scope="col"><?= $r['email'] ?></td>
 				<td scope="col"><?= $r['mobile'] ?></td>
 				<td scope="col"><?= $r['birthday'] ?></td>
 				<td scope="col"><?= $r['address'] ?></td>
-				<td scope="col">
-					<a href="addressbook-edit.php?sid=<?= $r['sid'] ?>">
-						<i class="fas fa-edit"></i>
-					</a>
-				</td>
 			</tr>
 			<?php endwhile; ?>
 		</tbody>

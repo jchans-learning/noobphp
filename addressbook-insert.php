@@ -1,6 +1,11 @@
 <?php // address book insert ?>
 
-
+<?php
+if(!isset($_SESSION['admin'])){
+	include __DIR__ . '/login.php';
+	exit;
+}
+?>
 
 <?php include __DIR__. '/parts/html-head.php'; ?>
 <?php include __DIR__. '/parts/navbar.php'; ?>

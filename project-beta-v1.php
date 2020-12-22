@@ -1,5 +1,7 @@
 <?php 
 // 小專試作第一版
+
+$pageName = '小專：拼圖資料庫試做';
 ?>
 
 <?php include __DIR__. '/parts/html-head.php'; ?>
