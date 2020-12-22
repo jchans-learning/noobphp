@@ -18,7 +18,18 @@
 	      </li>
 	    </ul>
 	    <ul class="navbar-nav">
-	    	<li class="nav-item">登入</li>
+			<?php if (isset($_SESSION['admin'])): ?>
+				<li class="nav-item <?= $pageName == 'login' ? active : '' ?>">
+					<a class="nav-link" href="<?= WEB_ROOT ?>addressbook-edit.php"><?= $_SESSION['admin']['account'] ?></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="<?= WEB_ROOT ?>logout.php">登出</a>
+				</li>
+			<?php else : ?>
+				<li class="nav-item <?= $pageName == 'login' ? active : '' ?>">
+					<a class="nav-link" href="<?= WEB_ROOT ?>login.php">登入</a>
+				</li>
+			<?php endif; ?>
 	    </ul>
 	  </div>
 	</div>
