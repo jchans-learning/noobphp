@@ -25,7 +25,7 @@ if (!isset($_POST['name']) or !isset($_POST['email'])) {
 $sql = "INSERT INTO `address_book`(
 	`name`, `email`, `mobile`, `birthday`, `address`, `created_at`
 	) VALUES (
-		?, ?, ?, ?, ?, ?
+		?, ?, ?, ?, ?, ?,
 )";
 
 $statement = $pdo->prepare($sql);
@@ -35,6 +35,8 @@ $statement->execute([
     $_POST['mobile'],
     empty($_POST['birthday']) ? NULL : $_POST['birthday'],
 	$_POST['address'],
+
+	// Heroku 研究暫用， MySQL 不用寫此行
 	'2020-12-23',
 ]);
 
