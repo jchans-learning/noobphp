@@ -3,7 +3,14 @@ require __DIR__ . '/db_connect.php';
 $pageName = 'login';
 
 if (isset($_POST['account']) and isset($_POST['password'])) {
-    $sql = "SELECT * FROM admins WHERE account=? AND password=SHA1(?)";
+    
+    // Local Development
+    //
+    // $sql = "SELECT * FROM admins WHERE account=? AND password=SHA1(?)";
+
+    // Heroku PostgreSQL
+    //
+    $sql = "SELECT * FROM admins WHERE account=? AND password=encode(digest(?, 'sha1'), 'hex')";
 
     $statement = $pdo->prepare($sql);
     $statement->execute([
