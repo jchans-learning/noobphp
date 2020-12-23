@@ -12,6 +12,7 @@ if (isset($_POST['account']) and isset($_POST['password'])) {
     ]);
 
     $row = $statement->fetch();
+    
     if (empty($row)) {
         $errorMsg = "帳號或密碼錯誤";
     } else {
