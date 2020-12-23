@@ -1,5 +1,6 @@
 <?php 
 // 開始開發前記得去 parts/html-head.php 確認一下 WEB_ROOT 的設定
+// 也記得確認」db_connect.php 的設定
  ?>
 
 <?php

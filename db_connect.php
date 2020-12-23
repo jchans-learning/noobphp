@@ -1,24 +1,24 @@
 <?php
 
 // 開發中，本地端測試的時候用
-// include 'db_key_noobphp.php';
-// $dsn = "mysql:host={$db_host}; dbname={$db_name};charset=utf8";
+include 'db_key_noobphp.php';
+$dsn = "mysql:host={$db_host}; dbname={$db_name};charset=utf8";
 
 // push 到 Heroku 時改為
 //
-$dbopts = parse_url(getenv('DATABASE_URL'));
-$app->register(new Csanquer\Silex\PdoServiceProvider\Provider\PDOServiceProvider('pdo'),
-               array(
-                'pdo.server' => array(
-                   'driver'   => 'pgsql',
-                   'user' => $dbopts["user"],
-                   'password' => $dbopts["pass"],
-                   'host' => $dbopts["host"],
-                   'port' => $dbopts["port"],
-                   'dbname' => ltrim($dbopts["path"],'/')
-                   )
-               )
-);
+// $dbopts = parse_url(getenv('DATABASE_URL'));
+// $app->register(new Csanquer\Silex\PdoServiceProvider\Provider\PDOServiceProvider('pdo'),
+//                array(
+//                 'pdo.server' => array(
+//                    'driver'   => 'pgsql',
+//                    'user' => $dbopts["user"],
+//                    'password' => $dbopts["pass"],
+//                    'host' => $dbopts["host"],
+//                    'port' => $dbopts["port"],
+//                    'dbname' => ltrim($dbopts["path"],'/')
+//                    )
+//                )
+// );
 //
 // push 到 Heroku 時改為 End
 
