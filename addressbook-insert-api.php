@@ -25,7 +25,7 @@ if (!isset($_POST['name']) or !isset($_POST['email'])) {
 $sql = "INSERT INTO `address_book`(
 	`name`, `email`, `mobile`, `birthday`, `address`, `created_at`
 	) VALUES (
-		?, ?, ?, ?, ?, CURRENT_DATE
+		?, ?, ?, ?, ?, ?
 )";
 
 $statement = $pdo->prepare($sql);
@@ -34,7 +34,8 @@ $statement->execute([
     $_POST['email'],
     $_POST['mobile'],
     empty($_POST['birthday']) ? NULL : $_POST['birthday'],
-    $_POST['address'],
+	$_POST['address'],
+	'2020-12-23',
 ]);
 
 $output['rowCount'] = $statement->rowCount();
