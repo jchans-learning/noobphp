@@ -32,7 +32,7 @@ $sql = "INSERT INTO address_book(
 
 $statement = $pdo->prepare($sql);
 $statement->execute([
-	"SELECT nextval(pg_get_serial_sequence('address_book', 'sid')) as sid",
+	2,
     $_POST['name'],
     $_POST['email'],
     $_POST['mobile'],
