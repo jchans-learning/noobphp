@@ -38,10 +38,13 @@ $sql = "INSERT INTO address_book(
 		?, ?, ?, ?, ?, ?, ?,
 )";
 
+$sql = "INSERT INTO address_book (
+	sid, name, email, mobile, birthday, address, created_at
+	) VALUES (
+	?, ?, ?, ?, ?, ?, ?
+	)";
 
-// Heroku with PostgreSQL
-//
-$id = 2;
+$id = 3;
 $statement = $pdo->prepare($sql);
 $statement->execute([
 	$id,
@@ -50,9 +53,10 @@ $statement->execute([
     $_POST['mobile'],
     empty($_POST['birthday']) ? NULL : $_POST['birthday'],
 	$_POST['address'],
-
 	date("Y-m-d"),
 ]);
+// Heroku with PostgreSQL End
+
 
 $output['rowCount'] = $statement->rowCount();
 if ($statement->rowCount()) {
