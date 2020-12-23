@@ -13,10 +13,19 @@ if (!isset($_POST['name']) or !isset($_POST['email'])) {
 	exit;
 }
 
+// Local Dev MySQL
+//
+// $sql = "INSERT INTO `address_book`(
+// 	`name`, `email`, `mobile`, `birthday`, `address`, `created_at`
+// 	) VALUES (
+// 		?, ?, ?, ?, ?, NOW()
+// )";
+
+// Heroku PostgreSQL
 $sql = "INSERT INTO `address_book`(
 	`name`, `email`, `mobile`, `birthday`, `address`, `created_at`
 	) VALUES (
-		?, ?, ?, ?, ?, NOW()
+		?, ?, ?, ?, ?, CURRENT_DATE
 )";
 
 $statement = $pdo->prepare($sql);
