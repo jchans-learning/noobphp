@@ -12,9 +12,6 @@
 
 // $pdo = new PDO($dsn, $db_user, $db_pass, $pdo_options);
 
-// if (!isset($_SESSION)) {
-// 	session_start();
-// }
 
 // push 到 Heroku 時改為
 $db = parse_url(getenv("DATABASE_URL"));
@@ -27,3 +24,8 @@ $pdo = new PDO("pgsql:" . sprintf(
     $db["pass"],
     ltrim($db["path"], "/")
 ));
+
+// Start Session
+if (!isset($_SESSION)) {
+	session_start();
+}
