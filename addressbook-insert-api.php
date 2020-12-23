@@ -39,16 +39,14 @@ $sql = "INSERT INTO address_book(
 )";
 
 $sql = "INSERT INTO address_book (
-	sid, name, email, mobile, birthday, address, created_at
+	name, email, mobile, birthday, address, created_at
 	) VALUES (
 	?, ?, ?, ?, ?, ?, ?
 	)";
 
-$tableName = 'address_book';
-$id = $pdo->lastInsertId('$tableName. _sid_seq');
+
 $statement = $pdo->prepare($sql);
 $statement->execute([
-	$id,
     $_POST['name'],
     $_POST['email'],
     $_POST['mobile'],
