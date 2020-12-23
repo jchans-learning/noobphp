@@ -15,29 +15,11 @@ if (!isset($_POST['name']) or !isset($_POST['email'])) {
 
 // Local Dev with MySQL
 //
-// $sql = "INSERT INTO `address_book`(
-// 	`name`, `email`, `mobile`, `birthday`, `address`, `created_at`
-// 	) VALUES (
-// 		?, ?, ?, ?, ?, NOW()
-// )";
-//
-// $statement = $pdo->prepare($sql);
-// $statement->execute([
-//     $_POST['name'],
-//     $_POST['email'],
-//     $_POST['mobile'],
-//     empty($_POST['birthday']) ? NULL : $_POST['birthday'],
-// 	$_POST['address'],
-// ]);
-
-// Heroku with PostgreSQL
-//
-
-$sql = "INSERT INTO address_book (
-	name, email, mobile, birthday, address, created_at
+$sql = "INSERT INTO `address_book`(
+	`name`, `email`, `mobile`, `birthday`, `address`, `created_at`
 	) VALUES (
-	?, ?, ?, ?, ?, ?
-	) RETURNING sid";
+		?, ?, ?, ?, ?, NOW()
+)";
 
 $statement = $pdo->prepare($sql);
 $statement->execute([
@@ -46,8 +28,26 @@ $statement->execute([
     $_POST['mobile'],
     empty($_POST['birthday']) ? NULL : $_POST['birthday'],
 	$_POST['address'],
-	date("Y-m-d"),
 ]);
+
+// Heroku with PostgreSQL
+//
+// $sql = "INSERT INTO address_book (
+// 	name, email, mobile, birthday, address, created_at
+// 	) VALUES (
+// 	?, ?, ?, ?, ?, ?
+// 	) RETURNING sid";
+
+// $statement = $pdo->prepare($sql);
+// $statement->execute([
+//     $_POST['name'],
+//     $_POST['email'],
+//     $_POST['mobile'],
+//     empty($_POST['birthday']) ? NULL : $_POST['birthday'],
+// 	$_POST['address'],
+// 	date("Y-m-d"),
+// ]);
+//
 // Heroku with PostgreSQL End
 
 
