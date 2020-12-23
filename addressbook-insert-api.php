@@ -30,9 +30,11 @@ $sql = "INSERT INTO address_book(
 		?, ?, ?, ?, ?, ?, CURRENT_DATE,
 )";
 
+$id = $pdo->lastInsertId('address_book_sid_seq');
+
 $statement = $pdo->prepare($sql);
 $statement->execute([
-	2,
+	$id,
     $_POST['name'],
     $_POST['email'],
     $_POST['mobile'],
