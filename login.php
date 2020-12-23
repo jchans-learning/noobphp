@@ -10,7 +10,8 @@ if (isset($_POST['account']) and isset($_POST['password'])) {
 
     // Heroku PostgreSQL
     //
-    $sql = "SELECT * FROM admins WHERE account=? AND password=encode(digest(?, 'sha1'), 'hex')";
+    // $sql = "SELECT * FROM admins WHERE account=? AND password=encode(digest(?, 'sha1'), 'hex')";
+    $sql = "SELECT * FROM admins WHERE account=? AND password=?";
 
     $statement = $pdo->prepare($sql);
     $statement->execute([
