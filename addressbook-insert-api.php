@@ -27,10 +27,11 @@ if (!isset($_POST['name']) or !isset($_POST['email'])) {
 $sql = "INSERT INTO address_book(
 	sid, name, email, mobile, birthday, address, created_at 
 	) VALUES (
-		?, ?, ?, ?, ?, ?, CURRENT_DATE,
+		?, ?, ?, ?, ?, ?, ?,
 )";
 
-$id = $pdo->lastInsertId('address_book_sid_seq');
+$id = 2;
+$cdate = '2020-12-20';
 
 $statement = $pdo->prepare($sql);
 $statement->execute([
