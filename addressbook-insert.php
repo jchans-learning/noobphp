@@ -2,6 +2,10 @@
 
 <?php
 require __DIR__. '/is_admin.php';
+require __DIR__. '/db_connect.php';
+
+$last_insert_id = $pdo->lastInsertId();
+echo 'Last Insert ID: '.$last_insert_id;
 
 $pageName = 'address book insert'
 ?>
