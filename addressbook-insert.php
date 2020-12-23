@@ -1,7 +1,7 @@
 <?php // address book insert ?>
 
 <?php
-// require __DIR__. '/is_admin.php';
+require __DIR__. '/is_admin.php';
 
 $pageName = 'address book insert'
 ?>

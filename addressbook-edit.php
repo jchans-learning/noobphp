@@ -1,7 +1,7 @@
 <?php // address book edit ?>
 
 <?php
-// require __DIR__. '/is_admin.php';
+require __DIR__. '/is_admin.php';
 require __DIR__ . '/db_connect.php';
 
 if(!isset($_GET['sid'])){

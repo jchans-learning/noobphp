@@ -8,10 +8,10 @@ $pageName = 'addressbook-list';
 require __DIR__. '/db_connect.php';
 
 
-// if(!isset($_SESSION['admin'])){
-// 	include __DIR__ . '/addressbook-list-noadmin.php';
-// 	exit;
-// }
+if(!isset($_SESSION['admin'])){
+	include __DIR__ . '/addressbook-list-noadmin.php';
+	exit;
+}
 
 
 $p_sql = sprintf("SELECT * FROM address_book ORDER BY sid DESC");
