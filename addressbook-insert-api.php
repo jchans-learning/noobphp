@@ -44,10 +44,12 @@ $sql = "INSERT INTO address_book (
 	?, ?, ?, ?, ?, ?, ?
 	)";
 
-$lastId = $pdo->query("SELECT LAST_INSERT_ID() AS id")->fetch();
+$last_insert_id = $pdo->lastInsertId();
+echo 'Last Insert ID: '.$last_insert_id;
+
 $statement = $pdo->prepare($sql);
 $statement->execute([
-	$lastId['id'],
+	$last_insert_id,
     $_POST['name'],
     $_POST['email'],
     $_POST['mobile'],
