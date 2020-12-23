@@ -44,15 +44,8 @@ $sql = "INSERT INTO address_book (
 	?, ?, ?, ?, ?, ?, ?
 	)";
 
-if (!$last_insert_id){
-	$last_insert_id = 1;
-} else {
-	$last_insert_id = $pdo->lastInsertId();
-}
-
 $statement = $pdo->prepare($sql);
 $statement->execute([
-	$last_insert_id,
     $_POST['name'],
     $_POST['email'],
     $_POST['mobile'],
