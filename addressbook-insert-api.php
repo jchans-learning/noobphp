@@ -32,16 +32,11 @@ if (!isset($_POST['name']) or !isset($_POST['email'])) {
 
 // Heroku with PostgreSQL
 //
-$sql = "INSERT INTO address_book(
-	sid, name, email, mobile, birthday, address, created_at 
-	) VALUES (
-		?, ?, ?, ?, ?, ?, ?,
-)";
 
 $sql = "INSERT INTO address_book (
-	sid, name, email, mobile, birthday, address, created_at
+	name, email, mobile, birthday, address, created_at
 	) VALUES (
-	?, ?, ?, ?, ?, ?, ?
+	?, ?, ?, ?, ?, ?,
 	)";
 
 $statement = $pdo->prepare($sql);
