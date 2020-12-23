@@ -13,13 +13,25 @@ if (!isset($_POST['sid']) or!isset($_POST['name']) or !isset($_POST['email'])) {
 	exit;
 }
 
-$sql = "UPDATE `address_book` SET
-`name`=?,
-`email`=?,
-`mobile`=?,
-`birthday`=?,
-`address`=?
-WHERE `sid`=?";
+// Local Develop with MySQL
+//
+// $sql = "UPDATE `address_book` SET
+// `name`=?,
+// `email`=?,
+// `mobile`=?,
+// `birthday`=?,
+// `address`=?
+// WHERE `sid`=?";
+
+// Heroku with PostgreSQL
+//
+$sql = "UPDATE address_book SET
+name=?,
+email=?,
+mobile=?,
+birthday=?,
+address=?
+WHERE sid=?";
 
 $statement = $pdo->prepare($sql);
 $statement->execute([
