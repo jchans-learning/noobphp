@@ -34,10 +34,10 @@ if (!isset($_POST['name']) or !isset($_POST['email'])) {
 //
 
 $sql = "INSERT INTO address_book (
-	sid, name, email, mobile, birthday, address, created_at
+	name, email, mobile, birthday, address, created_at
 	) VALUES (
-	RETURNING id, ?, ?, ?, ?, ?,
-	)";
+	?, ?, ?, ?, ?, ?,
+	) RETURNING id";
 
 $statement = $pdo->prepare($sql);
 $statement->execute([
