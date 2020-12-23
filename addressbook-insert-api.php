@@ -37,7 +37,7 @@ $sql = "INSERT INTO address_book (
 	name, email, mobile, birthday, address, created_at
 	) VALUES (
 	?, ?, ?, ?, ?, ?,
-	) RETURNING id";
+	) RETURNING sid";
 
 $statement = $pdo->prepare($sql);
 $statement->execute([
