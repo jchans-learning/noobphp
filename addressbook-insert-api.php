@@ -44,7 +44,8 @@ $sql = "INSERT INTO address_book (
 	?, ?, ?, ?, ?, ?, ?
 	)";
 
-$id = $pdo->lastInsertId('address_book_sid_seq');
+$tableName = 'address_book';
+$id = $pdo->lastInsertId('$tableName. _sid_seq');
 $statement = $pdo->prepare($sql);
 $statement->execute([
 	$id,
