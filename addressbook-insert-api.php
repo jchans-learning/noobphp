@@ -41,7 +41,7 @@ $sql = "INSERT INTO address_book(
 
 // Heroku with PostgreSQL
 //
-$id = $pdo->lastInsertId('"address_book"_sid_seq');
+$id = 2;
 $statement = $pdo->prepare($sql);
 $statement->execute([
 	$id,
