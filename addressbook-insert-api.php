@@ -13,7 +13,7 @@ if (!isset($_POST['name']) or !isset($_POST['email'])) {
 	exit;
 }
 
-// Local Dev MySQL
+// Local Dev with MySQL
 //
 // $sql = "INSERT INTO `address_book`(
 // 	`name`, `email`, `mobile`, `birthday`, `address`, `created_at`
@@ -21,12 +21,13 @@ if (!isset($_POST['name']) or !isset($_POST['email'])) {
 // 		?, ?, ?, ?, ?, NOW()
 // )";
 
-// Heroku PostgreSQL
+// Heroku with PostgreSQL
+//
 $sql = "INSERT INTO address_book(
-	name, email, mobile, birthday, address, created_at
+	name, email, mobile, birthday, address, created_at 
 	) VALUES (
 		?, ?, ?, ?, ?, ?,
-)";
+) WHERE sid=? ";
 
 $statement = $pdo->prepare($sql);
 $statement->execute([
@@ -35,6 +36,7 @@ $statement->execute([
     $_POST['mobile'],
     empty($_POST['birthday']) ? NULL : $_POST['birthday'],
 	$_POST['address'],
+	'',
 
 	// Heroku 研究暫用， MySQL 不用寫此行
 	'2020-12-23',
