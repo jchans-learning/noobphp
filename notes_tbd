@@ -1,0 +1,41 @@
+Exchange
+
+html-head
+delete
+edit-api
+insert-api
+db_connect
+
+
+heroku pg:psql
+
+INSERT INTO address_book (
+name, email, mobile, birthday, address, created_at
+) VALUES (
+'陳百完3', 'test@gmail.com', '0918-444-777', '1990-10-10', '台北市', '2020-12-23'
+) RETURNING sid;
+
+
+INSERT INTO address_book (
+sid, name, email, mobile, birthday, address, created_at
+) VALUES (
+1, '陳百完3', 'test@gmail.com', '0918-444-777', '1990-10-10', '台北市', '2020-12-23'
+);
+
+
+ALTER TABLE address_book ADD PRIMARY KEY (sid);
+
+ALTER TABLE address_book ADD PR (sid);
+
+
+DROP TABLE address_book;
+
+CREATE TABLE address_book (
+sid SERIAL PRIMARY KEY,
+name varchar NOT NULL,
+email varchar NOT NULL,
+mobile varchar NOT NULL,
+birthday date DEFAULT NULL,
+address varchar NOT NULL,
+created_at date NOT NULL
+);
