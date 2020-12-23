@@ -20,19 +20,28 @@ if (!isset($_POST['name']) or !isset($_POST['email'])) {
 // 	) VALUES (
 // 		?, ?, ?, ?, ?, NOW()
 // )";
+//
+// $statement = $pdo->prepare($sql);
+// $statement->execute([
+//     $_POST['name'],
+//     $_POST['email'],
+//     $_POST['mobile'],
+//     empty($_POST['birthday']) ? NULL : $_POST['birthday'],
+// 	$_POST['address'],
+// ]);
 
 // Heroku with PostgreSQL
 //
-
 $sql = "INSERT INTO address_book(
 	sid, name, email, mobile, birthday, address, created_at 
 	) VALUES (
 		?, ?, ?, ?, ?, ?, ?,
 )";
 
-$id = 2;
-$cdate = '2020-12-20';
 
+// Heroku with PostgreSQL
+//
+$id = $pdo->lastInsertId('"address_book"_sid_seq');
 $statement = $pdo->prepare($sql);
 $statement->execute([
 	$id,
@@ -41,6 +50,8 @@ $statement->execute([
     $_POST['mobile'],
     empty($_POST['birthday']) ? NULL : $_POST['birthday'],
 	$_POST['address'],
+
+	date("Y-m-d"),
 ]);
 
 $output['rowCount'] = $statement->rowCount();
