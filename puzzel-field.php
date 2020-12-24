@@ -1,6 +1,6 @@
 <?php
 // address book list
-$pageName = 'listOfUserPuzzels';
+$pageName = 'puzzel-field';
 ?>
 
 <?php 
@@ -57,25 +57,37 @@ $statement = $pdo->query($p_sql);
 				<th scope="col">pz_owner</th>
 				<th scope="col">pz_text</th>
 				<th scope="col">pz_status</th>
-				<th scope="col">bookid</th>
+				<th scope="col">book_id</th>
 				<th scope="col">p_name</th>
 				<th scope="col"><i class="fas fa-edit"></i></th>
 			</tr>			
 		</thead>
 		<tbody>
+		<?php while ($r = $statement->fetch()): ?>
+			<tr>
+				<th><i class="fas fa-minus-circle"></i></th>
+				<td scope="col"><?= $r['pzid'] ?></td>
+				<td scope="col"><?= $r['pz_owner'] ?></td>
+				<td scope="col"><?= $r['pz_text'] ?></td>
+				<td scope="col"><?= $r['pz_status'] ?></td>
+				<td scope="col"><?= $r['book_id'] ?></td>
+				<td scope="col"><?= $r['p_name'] ?></td>
+				<th scope="col"><i class="fas fa-edit"></i></th>
+			</tr>
+			<?php endwhile; ?>
 		</tbody>
 	</table>
 
 	<div class="row">
         <div class="col d-flex flex-row-reverse fixed-bottom">
             <button type="button" class="btn btn-info dropdown-toggle" id="puzzel-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                拼圖庫
+                拼圖倉庫
             </button>
             <div class="dropdown-menu">
                 <a href="#" class="dropdown-item">建立拼圖(C)</a>
                 <a href="page-puzzels.php" class="dropdown-item">我的拼圖(R, U, D)</a>
                 <a href="#" class="dropdown-item">我的折扣(R)</a>
-                <a href="#" class="dropdown-item">藏書筆記(R)</a>
+                <!-- <a href="#" class="dropdown-item">藏書筆記(R)</a> -->
             </div>
         </div>
         </div> 
