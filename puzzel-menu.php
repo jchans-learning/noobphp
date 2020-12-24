@@ -5,10 +5,10 @@
                 拼圖庫
             </button>
             <div class="dropdown-menu">
-                <a href="#" class="dropdown-item">建立拼圖(C)</a>
+                <a href="puzzel-new.php" class="dropdown-item">建立拼圖(C)</a>
                 <a href="puzzel-list.php" class="dropdown-item">我的拼圖(R, U, D)</a>
                 <a href="#" class="dropdown-item">我的折扣(R)</a>
-                <a href="#" class="dropdown-item">藏書筆記(R)</a>
+                <!-- <a href="#" class="dropdown-item">藏書筆記(R)</a> -->
             </div>
         </div>
         </div> 

@@ -9,7 +9,7 @@ require __DIR__. '/db_connect.php';
 
 
 if(!isset($_SESSION['admin'])){
-	include __DIR__ . '/project-beta-v1.php';
+	include __DIR__ . '/login.php';
 	exit;
 }
 
@@ -39,7 +39,7 @@ $statement = $pdo->query($p_sql);
 
 	<div class="row">
 		<div class="col">
-			<h1>拼圖清單頁</h1>
+			<h1>個人拼圖清單</h1>
 		</div>
 	</div>
 	
@@ -52,7 +52,7 @@ $statement = $pdo->query($p_sql);
 	<table class="table table-striped table-bordered">
 		<thead>
 			<tr>
-				<th><i class="fas fa-minus-circle"></i></th>
+			<th scope="col"><i class="fas fa-edit"></i></th>
 				<th scope="col">pzid</th>
 				<th scope="col">pz_owner</th>
 				<th scope="col">pz_text</th>
@@ -60,25 +60,25 @@ $statement = $pdo->query($p_sql);
 				<th scope="col">book_id</th>
 				<th scope="col">p_name</th>
 				<th scope="col">p_answer</th>
-				<th scope="col"><i class="fas fa-edit"></i></th>
+				<th><i class="fas fa-minus-circle"></i></th>
 			</tr>			
 		</thead>
 		<tbody>
 		<?php while ($r = $statement->fetch()): ?>
 			<tr>
+				<th scope="col"><i class="fas fa-edit"></i></th>
+				<td scope="col"><?= $r['pzid'] ?></td>
+				<td scope="col"><?= $r['pz_owner'] ?></td>
+				<td scope="col"><?= $r['pz_text'] ?></td>
+				<td scope="col"><?= $r['pz_status'] ? '已公開' : '未公開' ?></td>
+				<td scope="col"><?= $r['book_id'] ?></td>
+				<td scope="col"><?= $r['p_name'] ?></td>
+				<td scope="col"><?= $r['p_answer'] ?></td>
 				<td class="remove-icon">
 					<a href="javascript: del_it(<?= $r['pzid'] ?>)">
 						<i class="fas fa-minus-circle"></i>
 					</a>
 				</td>
-				<td scope="col"><?= $r['pzid'] ?></td>
-				<td scope="col"><?= $r['pz_owner'] ?></td>
-				<td scope="col"><?= $r['pz_text'] ?></td>
-				<td scope="col"><?= $r['pz_status'] ?></td>
-				<td scope="col"><?= $r['book_id'] ?></td>
-				<td scope="col"><?= $r['p_name'] ?></td>
-				<td scope="col"><?= $r['p_answer'] ?></td>
-				<th scope="col"><i class="fas fa-edit"></i></th>
 			</tr>
 			<?php endwhile; ?>
 		</tbody>
