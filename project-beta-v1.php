@@ -1,5 +1,6 @@
 <?php 
 // 小專試作第一版
+require __DIR__. '/db_connect.php';
 
 $pageName = '小專：拼圖資料庫試做';
 ?>
@@ -135,14 +136,12 @@ $pageName = '小專：拼圖資料庫試做';
             </button>
             <div class="dropdown-menu">
                 <a href="#" class="dropdown-item">建立拼圖(C)</a>
-                <a href="#" class="dropdown-item">我的拼圖(R, U, D)</a>
+                <a href="page-puzzels.php" class="dropdown-item">我的拼圖(R, U, D)</a>
                 <a href="#" class="dropdown-item">我的折扣(R)</a>
                 <a href="#" class="dropdown-item">藏書筆記(R)</a>
             </div>
         </div>
-        </div>
-
-        
+        </div> 
     </div>
 </div>
 

@@ -6,12 +6,14 @@ if (isset($_POST['account']) and isset($_POST['password'])) {
     
     // Local Development
     //
-    // $sql = "SELECT * FROM admins WHERE account=? AND password=SHA1(?)";
+    $sql = "SELECT * FROM admins WHERE account=? AND password=SHA1(?)";
 
     // Heroku PostgreSQL
     //
+    // 研究中
     // $sql = "SELECT * FROM admins WHERE account=? AND password=encode(digest(?, 'sha1'), 'hex')";
-    $sql = "SELECT * FROM admins WHERE account=? AND password=?";
+    //
+    // $sql = "SELECT * FROM admins WHERE account=? AND password=?";
 
     $statement = $pdo->prepare($sql);
     $statement->execute([
