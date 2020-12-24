@@ -16,10 +16,10 @@ if (!isset($_POST['pz_text']) or !isset($_POST['pz_status'])) {
 // Local Dev with MySQL
 //
 
-$sql = "INSERT INTO puzzels (
-	`pz_owner`, `pz_text`, `pz_status`, `book_id`, `p_name`, `p_answer`, `created_at`
+$sql = "INSERT INTO `puzzels` (
+	`pz_owner`, `pz_text`, `pz_status`, `book_id`, `p_name`, `created_at`
 	) VALUES (
-	?, ?, ?, ?, ?, ?, NOW()
+	?, ?, ?, ?, ?, NOW() 
 	)";
 
 $statement = $pdo->prepare($sql);
@@ -29,7 +29,6 @@ $statement->execute([
     $_POST['pz_status'],
     $_POST['book_id'],
     $_POST['p_name'],
-	$_POST['p_answer'],
 ]);
 
 $output['rowCount'] = $statement->rowCount();

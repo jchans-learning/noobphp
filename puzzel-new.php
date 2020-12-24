@@ -18,23 +18,23 @@ $pageName = 'Create New Puzzle'
 
 					<form name="form1" novalidate onsubmit="checkForm(); return false;">
 						<div class="form-group">
-							<label for="pz_owner">暱稱</label>
-							<textarea class="form-control" id="pz_owner" name="pz_owner" rows="3"></textarea>
+							<label for="pz_owner">顯示暱稱</label>
+							<input type="text" class="form-control" id="pz_owner" name="pz_owner">
                         </div>
                         <div class="form-group">
-							<label for="pz_text">拼圖文字</label>
+							<label for="pz_text">拼圖用文字摘句</label>
 							<textarea class="form-control" id="pz_text" name="pz_text" rows="3"></textarea>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="TRUE" id="pz_status_true" name="pz_status">
+                            <input class="form-check-input" type="checkbox" value="1" id="pz_status_true" name="pz_status">
                             <label class="form-check-label" for="defaultCheck1">
-                                公開
+                                公開拼圖
                             </label>
 						</div>
 						<div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="False" id="pz_status_false" name="pz_status">
+                            <input class="form-check-input" type="checkbox" value="0" id="pz_status_false" name="pz_status">
                             <label class="form-check-label" for="defaultCheck1">
-                                不公開
+                                不公開拼圖
                             </label>
                         </div>
 						<div class="form-group mt-3">

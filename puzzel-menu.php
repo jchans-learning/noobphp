@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col d-flex flex-row-reverse fixed-bottom">
             <button type="button" class="btn btn-info dropdown-toggle" id="puzzel-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                拼圖庫
+                拼圖倉庫
             </button>
             <div class="dropdown-menu">
                 <a href="puzzel-new.php" class="dropdown-item">建立拼圖(C)</a>

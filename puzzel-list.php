@@ -73,7 +73,7 @@ $statement = $pdo->query($p_sql);
 				<td scope="col"><?= $r['pz_status'] ? '已公開' : '未公開' ?></td>
 				<td scope="col"><?= $r['book_id'] ?></td>
 				<td scope="col"><?= $r['p_name'] ?></td>
-				<td scope="col"><?= $r['p_answer'] ?></td>
+				<td scope="col"><?= 'TBD' ?></td>
 				<td class="remove-icon">
 					<a href="javascript: del_it(<?= $r['pzid'] ?>)">
 						<i class="fas fa-minus-circle"></i>
