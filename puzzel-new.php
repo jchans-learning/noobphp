@@ -16,15 +16,25 @@ $pageName = 'Create New Puzzle'
 				<div class="card-body">
 					<h5 class="card-title">新增拼圖</h5>
 
-                    <form name="form1" novalidate onsubmit="checkForm(); return false;">
+					<form name="form1" novalidate onsubmit="checkForm(); return false;">
+						<div class="form-group">
+							<label for="pz_owner">暱稱</label>
+							<textarea class="form-control" id="pz_owner" name="pz_owner" rows="3"></textarea>
+                        </div>
                         <div class="form-group">
 							<label for="pz_text">拼圖文字</label>
 							<textarea class="form-control" id="pz_text" name="pz_text" rows="3"></textarea>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="down" id="pz_status" name="pz_status">
+                            <input class="form-check-input" type="checkbox" value="TRUE" id="pz_status_true" name="pz_status">
                             <label class="form-check-label" for="defaultCheck1">
-                                公開拼圖
+                                公開
+                            </label>
+						</div>
+						<div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="False" id="pz_status_false" name="pz_status">
+                            <label class="form-check-label" for="defaultCheck1">
+                                不公開
                             </label>
                         </div>
 						<div class="form-group mt-3">
@@ -45,7 +55,7 @@ $pageName = 'Create New Puzzle'
 				</div>
 			</div>
 		</div>
-	</div>
+    </div>
 </div>
 
 <?php include __DIR__. '/puzzel-menu.php'; ?>
@@ -58,7 +68,7 @@ $pageName = 'Create New Puzzle'
 	function checkForm() {
 		const fd = new FormData(document.form1);
 		
-		fetch('addressbook-insert-api.php', {
+		fetch('puzzel-new-api.php', {
 			method: 'POST',
 			body: fd
 			})
@@ -67,7 +77,7 @@ $pageName = 'Create New Puzzle'
 				console.log(obj);
 			})
 		
-			window.location.href = 'addressbook-list.php';
+			window.location.href = 'puzzel-list.php';
         }
 
 	

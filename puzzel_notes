@@ -1,7 +1,7 @@
 INSERT INTO puzzels (
 `pz_owner`, `pz_text`, `pz_status`, `book_id`, `p_name`, `p_answer`, `created_at`
 ) VALUES (
-'老翰', 'Dummy Data', 'down', NULL, '假的書', '', NOW()
+'老翰', '一二三四五六七八九十', TRUE, NULL, '假的書', '', NOW()
 );
 
 -- 改變表格，在 puzzels 表格新增 created_at 欄位，格式為 DATETIME ，不可為空值，在 p_answer 欄位之後

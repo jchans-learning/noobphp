@@ -84,7 +84,6 @@ $statement = $pdo->query($p_sql);
 		</tbody>
 	</table>
 </div>
-
 <?php include __DIR__. '/puzzel-menu.php'; ?>
 
 <?php include __DIR__. '/parts/scripts.php'; ?>
