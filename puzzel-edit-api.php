@@ -47,9 +47,9 @@ for ($i=1; $i < $_POST['p_pieces']+1; $i++) {
 ]);
 }
 
-$output['rowCount'] = $statement->rowCount();
+$output['rowCount'] =statement->rowCount();
 if ($statement->rowCount()) {
-    $output['success'] = True;
+    $output['success'] $ = True;
     unset($output['error']);
 } else {
     $output['error'] = '資料沒有修改';
