@@ -1,12 +1,13 @@
-<?php // puzzle edit ?>
+<?php // puzzle edit 
+?>
 
 <?php
-require __DIR__. '/is_admin.php';
+require __DIR__ . '/is_admin.php';
 require __DIR__ . '/db_connect.php';
 
 $pageName = 'Edit Puzzle';
 
-if(!isset($_GET['pzid'])){
+if (!isset($_GET['pzid'])) {
 	header('Location: puzzel-list.php');
 	exit;
 }
@@ -16,7 +17,7 @@ $row = $pdo
 	->query("SELECT * FROM `puzzels` WHERE pzid=$pzid")
 	->fetch();
 
-if(empty($row)){
+if (empty($row)) {
 	header('Location: puzzel-list.php');
 	exit;
 }
@@ -29,8 +30,8 @@ $pa_row = $pdo
 
 
 
-<?php include __DIR__. '/parts/html-head.php'; ?>
-<?php include __DIR__. '/parts/navbar.php'; ?>
+<?php include __DIR__ . '/parts/html-head.php'; ?>
+<?php include __DIR__ . '/parts/navbar.php'; ?>
 
 <div class="container mt-3">
 	<div class="row d-flex justify-content-center">
@@ -43,27 +44,27 @@ $pa_row = $pdo
 						<div class="form-group" style="display: none">
 							<label for="pzid">pzid</label>
 							<input type="text" class="form-control" id="pzid" name="pzid" value="<?= htmlentities($row['pzid']) ?>">
-                        </div>
+						</div>
 						<div class="form-group">
 							<label for="pz_owner">顯示暱稱</label>
 							<input type="text" class="form-control" id="pz_owner" name="pz_owner" value="<?= htmlentities($row['pz_owner']) ?>">
-                        </div>
-                        <div class="form-group">
+						</div>
+						<div class="form-group">
 							<label for="pz_text">拼圖用文字摘句</label>
 							<textarea class="form-control" id="pz_text" name="pz_text" rows="3"><?= htmlentities($row['pz_text']) ?></textarea>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="1" id="pz_status_true" name="pz_status">
-                            <label class="form-check-label" for="defaultCheck1">
-                                公開拼圖
-                            </label>
 						</div>
 						<div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="0" id="pz_status_false" name="pz_status">
-                            <label class="form-check-label" for="defaultCheck1">
-                                不公開拼圖
-                            </label>
-                        </div>
+							<input class="form-check-input" type="checkbox" value="1" id="pz_status_true" name="pz_status">
+							<label class="form-check-label" for="defaultCheck1">
+								公開拼圖
+							</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="0" id="pz_status_false" name="pz_status">
+							<label class="form-check-label" for="defaultCheck1">
+								不公開拼圖
+							</label>
+						</div>
 						<div class="form-group mt-3">
 							<label for="book_id">書籍</label>
 							<input type="text" class="form-control" id="book_id" name="book_id" value="<?= htmlentities($row['book_id']) ?>">
@@ -74,7 +75,7 @@ $pa_row = $pdo
 						</div>
 						<div class="form-group">
 							<label for="p_name">拼圖設定</label><br>
-							<?php foreach ($pa_row as $k => $v): ?>
+							<?php foreach ($pa_row as $k => $v) : ?>
 								<input id="pz<?= $v['ans_index']; ?>" name="<?= $v['ans_index']; ?>" type="text" class="form-control mb-2" placeholder="拼片<?= $v['ans_index']; ?>" value="<?= $v['ans_txt']; ?>">
 							<?php endforeach; ?>
 
@@ -92,34 +93,33 @@ $pa_row = $pdo
 				</div>
 			</div>
 		</div>
-    </div>
+	</div>
 </div>
 
-<?php include __DIR__. '/puzzel-menu.php'; ?>
+<?php include __DIR__ . '/puzzel-menu.php'; ?>
 
-<?php include __DIR__. '/parts/scripts.php'; ?>
+<?php include __DIR__ . '/parts/scripts.php'; ?>
 
 <script>
-	
-
 	function checkForm() {
 		const fd = new FormData(document.form1);
-		
+
 		fetch('puzzel-edit-api.php', {
-			method: 'POST',
-			body: fd
+				method: 'POST',
+				body: fd
 			})
 			.then(r => r.json())
-            .then(obj => {
+			.then(obj => {
 				console.log(obj);
 			})
 
-			// window.location.href = 'puzzel-list.php';
-        }
+		window.location.href = 'puzzel-list.php';
+	}
 
 	let pzI = 0
+
 	function addPuzzelPiece() {
-	 	pzI += 1
+		pzI += 1
 		const pInputPrev = document.querySelector('#pz0');
 		const pInput = `
   			<input id="pz${pzI}" name="${pzI}" type="text" class="form-control mb-2" placeholder="拼片${pzI}">
@@ -129,15 +129,14 @@ $pa_row = $pdo
 		document.querySelector('#p_pieces').value = pzI;
 		return pzI;
 	}
-	
 </script>
 
-<?php include __DIR__. '/parts/html-foot.php'; ?>
+<?php include __DIR__ . '/parts/html-foot.php'; ?>
 
-<?php 
+<?php
 // 筆記
 //
 // Page Form Ref:
 // 1. Bootstrap 4, card: https://getbootstrap.com/docs/4.0/components/card/
 //
- ?>
+?>

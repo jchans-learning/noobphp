@@ -1,6 +1,6 @@
-<?php 
-require __DIR__. '/is_admin.php';
-require __DIR__. '/db_connect.php';
+<?php
+require __DIR__ . '/is_admin.php';
+require __DIR__ . '/db_connect.php';
 
 $output = [
 	'success' => false,
@@ -27,8 +27,8 @@ $statement = $pdo->prepare($sql);
 $statement->execute([
 	$_POST['pz_owner'],
 	$_POST['pz_text'],
-    $_POST['pz_status'],
-    $_POST['book_id'],
+	$_POST['pz_status'],
+	$_POST['book_id'],
 	$_POST['p_name'],
 	$_POST['pzid'],
 ]);
@@ -38,23 +38,21 @@ $pa_sql = "UPDATE `puzzel_answers` SET
 `ans_txt`=?
 WHERE `pz_id`=?";
 
-for ($i=1; $i < $_POST['p_pieces']+1; $i++) { 
+for ($i = 1; $i < $_POST['p_pieces'] + 1; $i++) {
 	$statement = $pdo->prepare($pa_sql);
 	$statement->execute([
-	$i,
-	$_POST[$i],
-	$_POST['pzid'],
-]);
+		$i,
+		$_POST[$i],
+		$_POST['pzid'],
+	]);
 }
 
-$output['rowCount'] =statement->rowCount();
+$output['rowCount'] = $statement->rowCount();
 if ($statement->rowCount()) {
-    $output['success'] $ = True;
-    unset($output['error']);
+	$output['success'] = True;
+	unset($output['error']);
 } else {
-    $output['error'] = '資料沒有修改';
+	$output['error'] = '資料沒有修改';
 }
 
 echo json_encode($output, JSON_UNESCAPED_UNICODE);
-
-
