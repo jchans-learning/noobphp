@@ -71,7 +71,7 @@ $pa_row = $pdo
 						<div class="form-group">
 							<label for="p_name">拼圖設定</label><br>
 							<?php foreach ($pa_row as $k => $v): ?>
-								<?= print_r($v); ?>
+								<input id="pz<?= $v['ans_index']; ?>" name="<?= $v['ans_index']; ?>" type="text" class="form-control mb-2" placeholder="拼片<?= $v['ans_index']; ?>" value="<?= $v['ans_txt']; ?>">
 							<?php endforeach; ?>
 
 							<button id="pz0" class="btn btn-outline-secondary" type="button" onclick="addPuzzelPiece()">
