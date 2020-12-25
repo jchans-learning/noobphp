@@ -33,19 +33,19 @@ $statement->execute([
 	$_POST['pzid'],
 ]);
 
-$pa_sql = "UPDATE `puzzel_answers` SET
-`ans_index`=?,
-`ans_txt`=?
-WHERE `pz_id`=?";
+// $pa_sql = "UPDATE `puzzel_answers` SET
+// `ans_index`=?,
+// `ans_txt`=?
+// WHERE `pz_id`=?";
 
-for ($i = 1; $i < $_POST['p_pieces'] + 1; $i++) {
-	$statement = $pdo->prepare($pa_sql);
-	$statement->execute([
-		$i,
-		$_POST[$i],
-		$_POST['pzid'],
-	]);
-}
+// for ($i = 1; $i < $_POST['p_pieces'] + 1; $i++) {
+// 	$statement = $pdo->prepare($pa_sql);
+// 	$statement->execute([
+// 		$i,
+// 		$_POST[$i],
+// 		$_POST['pzid'],
+// 	]);
+// }
 
 $output['rowCount'] = $statement->rowCount();
 if ($statement->rowCount()) {
