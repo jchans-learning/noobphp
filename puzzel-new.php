@@ -1,4 +1,4 @@
-<?php // address book insert ?>
+<?php // new puzzel insert ?>
 
 <?php
 require __DIR__. '/is_admin.php';
@@ -46,10 +46,16 @@ $pageName = 'Create New Puzzle'
 							<input type="text" class="form-control" id="p_name" name="p_name">
 						</div>
 						<div class="form-group">
-							<label for="p_answer">拼圖的答案</label>
-							<input type="text" class="form-control" id="p_answer" name="p_answer">
+							<label for="p_name">拼圖設定</label><br>
+							<button id="pz0" class="btn btn-outline-secondary" type="button" onclick="addPuzzelPiece()">
+								+
+							</button>
 						</div>
-
+						<div class="form-group" style="display: none;">
+							<label for="p_pieces">拼圖片數</label>
+							<input type="text" class="form-control" id="p_pieces" name="p_pieces" value="">
+						</div>
+						<br>
 						<button type="submit" class="btn btn-primary">新增</button>
 					</form>
 				</div>
@@ -76,10 +82,22 @@ $pageName = 'Create New Puzzle'
             .then(obj => {
 				console.log(obj);
 			})
-		
-			window.location.href = 'puzzel-list.php';
+
+			// window.location.href = 'puzzel-list.php';
         }
 
+	let pzI = 0
+	function addPuzzelPiece() {
+	 	pzI += 1
+		const pInputPrev = document.querySelector('#pz0');
+		const pInput = `
+  			<input id="pz${pzI}" name="${pzI}" type="text" class="form-control mb-2" placeholder="拼片${pzI}">
+		`;
+
+		pInputPrev.insertAdjacentHTML("beforebegin", pInput);
+		document.querySelector('#p_pieces').value = pzI;
+		return pzI;
+	}
 	
 </script>
 

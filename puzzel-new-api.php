@@ -6,6 +6,7 @@ $output = [
 	'success' => false,
 	'code' => 0,
 	'error' => '參數不足',
+	'lastId' => 0,
 ];
 
 if (!isset($_POST['pz_text']) or !isset($_POST['pz_status'])) {
@@ -31,9 +32,23 @@ $statement->execute([
     $_POST['p_name'],
 ]);
 
+$last_pzid = $pdo->lastInsertId();
+
+$pa_sql = "INSERT INTO `puzzel_answers` (`pa_id`, `pz_id`, `ans_index`, `ans_txt`) VALUES (NULL, ?, ?, ?)";
+
+for ($i=1; $i < $_POST['p_pieces']+1; $i++) { 
+	$statement = $pdo->prepare($pa_sql);
+	$statement->execute([
+	$last_pzid,
+	$i,
+	$_POST[$i],
+]);
+}
+
 $output['rowCount'] = $statement->rowCount();
 if ($statement->rowCount()) {
-    $output['success'] = True;
+	$output['success'] = True;
+	$output['lastID'] = $pdo->lastInsertId();
     unset($output['error']);
 }
 

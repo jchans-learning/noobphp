@@ -66,7 +66,11 @@ $statement = $pdo->query($p_sql);
 		<tbody>
 		<?php while ($r = $statement->fetch()): ?>
 			<tr>
-				<th scope="col"><i class="fas fa-edit"></i></th>
+				<th scope="col">
+					<a href="puzzel-edit.php?pzid=<?= $r['pzid'] ?>">
+						<i class="fas fa-edit"></i>
+					</a>
+				</th>
 				<td scope="col"><?= $r['pzid'] ?></td>
 				<td scope="col"><?= $r['pz_owner'] ?></td>
 				<td scope="col"><?= $r['pz_text'] ?></td>
