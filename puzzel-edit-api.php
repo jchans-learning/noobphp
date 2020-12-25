@@ -8,10 +8,10 @@ $output = [
 	'error' => '參數不足',
 ];
 
-if (!isset($_POST['pz_text']) or !isset($_POST['pz_status'])) {
-	echo json_encode($output, JSON_UNESCAPED_UNICODE);
-	exit;
-}
+// if (!isset($_POST['pz_text']) or !isset($_POST['pz_status'])) {
+// 	echo json_encode($output, JSON_UNESCAPED_UNICODE);
+// 	exit;
+// }
 
 // Local Develop with MySQL
 //
@@ -33,17 +33,18 @@ $statement->execute([
 	$_POST['pzid'],
 ]);
 
+// 拼圖片的表單有待研究，有點問題
+//
 $pa_sql = "UPDATE `puzzel_answers` SET
-`ans_index`=?,
 `ans_txt`=?
-WHERE `pz_id`=?";
+WHERE `pz_id`=? AND `ans_index`=?";
 
 for ($i = 1; $i < $_POST['p_pieces'] + 1; $i++) {
 	$statement = $pdo->prepare($pa_sql);
 	$statement->execute([
-		$i,
 		$_POST[$i],
 		$_POST['pzid'],
+		$i,
 	]);
 }
 
