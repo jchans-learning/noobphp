@@ -40,6 +40,10 @@ $pa_row = $pdo
 					<h5 class="card-title">編輯拼圖</h5>
 
 					<form name="form1" novalidate onsubmit="checkForm(); return false;">
+						<div class="form-group" style="display: none">
+							<label for="pzid">pzid</label>
+							<input type="text" class="form-control" id="pzid" name="pzid" value="<?= htmlentities($row['pzid']) ?>">
+                        </div>
 						<div class="form-group">
 							<label for="pz_owner">顯示暱稱</label>
 							<input type="text" class="form-control" id="pz_owner" name="pz_owner" value="<?= htmlentities($row['pz_owner']) ?>">
@@ -101,7 +105,7 @@ $pa_row = $pdo
 	function checkForm() {
 		const fd = new FormData(document.form1);
 		
-		fetch('puzzel-new-api.php', {
+		fetch('puzzel-edit-api.php', {
 			method: 'POST',
 			body: fd
 			})

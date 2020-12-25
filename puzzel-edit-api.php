@@ -21,20 +21,7 @@ $sql = "UPDATE `puzzels` SET
 `pz_status`=?, 
 `book_id`=?, 
 `p_name`=?, 
-`created_at`=?
 WHERE `pzid`=?";
-
-// Heroku with PostgreSQL
-//
-// $sql = "UPDATE address_book SET
-// name=?,
-// email=?,
-// mobile=?,
-// birthday=?,
-// address=?
-// WHERE sid=?";
-//
-// Heroku with PostgreSQL end
 
 $statement = $pdo->prepare($sql);
 $statement->execute([
@@ -42,8 +29,23 @@ $statement->execute([
 	$_POST['pz_text'],
     $_POST['pz_status'],
     $_POST['book_id'],
-    $_POST['p_name'],
+	$_POST['p_name'],
+	$_POST['pzid'],
 ]);
+
+$pa_sql = "UPDATE `puzzel_answers` SET
+`ans_index`=?,
+`ans_txt`=?
+WHERE `pz_id`=?";
+
+for ($i=1; $i < $_POST['p_pieces']+1; $i++) { 
+	$statement = $pdo->prepare($pa_sql);
+	$statement->execute([
+	$i,
+	$_POST[$i],
+	$_POST['pzid'],
+]);
+}
 
 $output['rowCount'] = $statement->rowCount();
 if ($statement->rowCount()) {
