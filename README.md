@@ -1,5 +1,10 @@
 # My Dummy Project to Practice PHP.
 
+## 2020/12/30 Branch
+
+- 用一個 Branch 存放小專題（期中專題？）結束的時候的狀態。
+- 打算修整一下目前的狀態，改一下版面，改成個類似留言板之類的東西。
+
 ## 2020/12/16 Project created.
 
 Need to becareful on the git command to push to Heroku.
